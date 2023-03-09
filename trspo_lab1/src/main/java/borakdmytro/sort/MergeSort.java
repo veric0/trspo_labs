@@ -21,22 +21,21 @@ public class MergeSort implements Sort {
     }
 
     protected static void merge(int[] arr, int left, int mid, int right) {
-        int n1 = mid - left + 1;
-        int n2 = right - mid;
+        int length1 = mid - left + 1;
+        int length2 = right - mid;
+        int[] leftArr = new int[length1];
+        int[] rightArr = new int[length2];
 
-        int[] leftArr = new int[n1];
-        int[] rightArr = new int[n2];
-
-        for (int i = 0; i < n1; ++i) {
+        for (int i = 0; i < length1; ++i) {
             leftArr[i] = arr[left + i];
         }
-        for (int j = 0; j < n2; ++j) {
+        for (int j = 0; j < length2; ++j) {
             rightArr[j] = arr[mid + 1 + j];
         }
 
         int i = 0, j = 0;
         int k = left;
-        while (i < n1 && j < n2) {
+        while (i < length1 && j < length2) {
             if (leftArr[i] <= rightArr[j]) {
                 arr[k] = leftArr[i];
                 i++;
@@ -47,13 +46,12 @@ public class MergeSort implements Sort {
             k++;
         }
 
-        while (i < n1) {
+        while (i < length1) {
             arr[k] = leftArr[i];
             i++;
             k++;
         }
-
-        while (j < n2) {
+        while (j < length2) {
             arr[k] = rightArr[j];
             j++;
             k++;

@@ -3,7 +3,6 @@ package borakdmytro.util;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-
 public class ArrayGenerator {
     /**
      * @param length of array

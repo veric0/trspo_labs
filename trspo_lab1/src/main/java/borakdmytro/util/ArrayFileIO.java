@@ -9,6 +9,20 @@ import java.util.stream.IntStream;
 
 public class ArrayFileIO {
     /**
+     * @param arr array to be written to file
+     * @param fileName name of file to write to
+     */
+    public static void writeArrayToFile(int[] arr, String fileName) {
+        fileName = fileName + ".txt";
+        try (BufferedWriter writer = new BufferedWriter(new java.io.FileWriter(fileName))) {
+            writer.write(Arrays.toString(arr).replace("[", "").replace("]", ""));
+            System.out.println("\n Результат було збережено y файл " + fileName);
+        } catch (IOException e) {
+            System.out.println("\n Сталася помилка під час збереження файлу " + fileName);
+        }
+    }
+
+    /**
      * @param fileName name of file with numbers separated with ", "
      * @return array filled with numbers from file
      */
@@ -23,23 +37,9 @@ public class ArrayFileIO {
                     .forEach(i -> array[i] = Integer.parseInt(values[i]));
             System.out.println("\n Результат було зчитано з файлу " + fileName);
         } catch (IOException e) {
-            System.out.println("\n Сталася помилка під час читання файлу " + fileName + "\n");
+            System.out.println("\n Сталася помилка під час читання файлу " + fileName);
             return new int[0];
         }
         return array;
-    }
-
-    /**
-     * @param arr array to be written to file
-     * @param fileName name of file to write to
-     */
-    public static void writeArrayToFile(int[] arr, String fileName) {
-        fileName = fileName + ".txt";
-        try (BufferedWriter writer = new BufferedWriter(new java.io.FileWriter(fileName))) {
-            writer.write(Arrays.toString(arr).replace("[", "").replace("]", ""));
-            System.out.println("\n Результат було збережено y файл " + fileName);
-        } catch (IOException e) {
-            System.out.println("\n Сталася помилка під час збереження файлу " + fileName + "\n");
-        }
     }
 }

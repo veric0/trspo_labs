@@ -30,10 +30,5 @@ public class MergeSortParallel extends MergeSort {
         }
     }
 
-//    public static void main(String[] args) {
-//        int[] arr = {4, 7, 2, 8, 3, 5};
-//        mergeSortParallel(arr);
-//        System.out.println(Arrays.toString(arr)); // output: [2, 3, 4, 5, 7, 8]
-//    }
 }
 

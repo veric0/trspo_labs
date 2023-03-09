@@ -63,7 +63,7 @@ public class Main_lab1 {
         enterTheData("\n Введіть довжину масиву ");
         int length = readNumberFromConsole();
         int[] arr = ArrayGenerator.generateRandomArray(length);
-        printArray(arr);
+//        printArray(arr);
         return arr;
     }
 
@@ -84,7 +84,7 @@ public class Main_lab1 {
         }
         double duration = SortTimer.measureTime(arr, sort);
         System.out.println("\n Час виконання: " + duration + " мс");
-        printArray(arr);
+//        printArray(arr);
     }
 
     public static void saveResultToFile(int[] arr) {
@@ -95,7 +95,7 @@ public class Main_lab1 {
     public static int[] getArrayFromFile() {
         enterTheData("\n Введіть назву текстового файлу");
         int[] arr = ArrayFileIO.readArrayFromFile(readStringFromConsole());
-        printArray(arr);
+//        printArray(arr);
         return arr;
     }
 
