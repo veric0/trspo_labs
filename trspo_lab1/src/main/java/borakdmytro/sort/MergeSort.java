@@ -11,7 +11,7 @@ public class MergeSort implements Sort {
         mergeSort(arr, left, right);
     }
 
-    private static void mergeSort(int[] arr, int left, int right) {
+    protected static void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
             mergeSort(arr, left, mid);

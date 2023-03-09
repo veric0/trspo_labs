@@ -83,7 +83,11 @@ public class Main_lab1 {
             }
         }
         double duration = SortTimer.measureTime(arr, sort);
-        System.out.println("\n Час виконання: " + duration + " мс");
+        if (duration < 1000) {
+            System.out.printf("\n Час виконання: %.6f мс\n", duration);
+        } else {
+            System.out.printf("\n Час виконання: %.3f с\n", duration / 1000);
+        }
 //        printArray(arr);
     }
 
